@@ -49,8 +49,10 @@ func (h *handler) doSomethingHandler(client worker.JobClient, job entities.Job) 
 	succeedNextTry, isBool := variables["succeedNextTry"].(bool)
 	if !isBool || !succeedNextTry {
 		answer = map[string]any{
-			"type": map[string]any{
-				"id": "",
+			"answer": map[string]any{
+				"type": map[string]any{
+					"id": "",
+				},
 			},
 		}
 		outputVariables["succeedNextTry"] = true
